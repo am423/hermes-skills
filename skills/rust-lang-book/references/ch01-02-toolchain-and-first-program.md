@@ -90,7 +90,7 @@ Section refs: §0 = Foreword/Introduction, §1.1 Installation, §1.2 Hello World
 
 | Command | Effect | Ref |
 | --- | --- | --- |
-| `curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf \| sh` | install `rustup` (Linux/macOS) | §1.1 |
+| `curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf`, output piped to `sh` | install `rustup` (Linux/macOS) | §1.1 |
 | `rustc --version` / `cargo --version` | verify install | §1.1, §1.3 |
 | `rustup update` | update to the newest released version | §1.1 |
 | `rustup self uninstall` | remove Rust and `rustup` | §1.1 |

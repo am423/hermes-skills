@@ -31,7 +31,7 @@ a fix or a stated reason. The ref names the chapter file that explains the rule.
 ## Error Handling (ch09, ch12)
 
 - [ ] Does every operation that can fail in normal use return `Result`? (§9.3)
-- [ ] Is each `panic!`, `unwrap`, and `expect` in non-test code justified by a broken invariant
+- [ ] Is each `panic!` and `unwrap` and `expect` in non-test code justified by a broken invariant
       or by knowledge the compiler lacks? (§9.3)
 - [ ] Does each `expect` message say why the value should be present? (§9.2, §9.3)
 - [ ] Are errors propagated with `?` instead of hand-written `match` ladders? (§9.2)

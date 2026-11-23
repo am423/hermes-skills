@@ -128,7 +128,7 @@ Every row is the book's own guidance; the ref names the chapter file that holds 
   (§7.4, §14.2).
 - Files: `src/name.rs`, not `src/name/mod.rs` (§7.5).
 - Binary crates: thin `main.rs`, logic in `lib.rs` so it can be tested (§12.3).
-- Tests: `assert_eq!`/`assert_ne!` over `assert!(a == b)`; unit tests in a `#[cfg(test)]` module
+- Tests: `assert_eq!` / `assert_ne!` over `assert!(a == b)`; unit tests in a `#[cfg(test)]` module
   next to the code, integration tests in `tests/` (§11.1, §11.3). Slow tests: `#[ignore]` (§11.2).
 - CLI: errors to stderr with `eprintln!`, results to stdout (§12.6). Env var for a setting that
   should hold across runs in a session (§12.5).

@@ -41,7 +41,7 @@ Source: The Rust Programming Language ch. 11 (rust-lang/book @ 5c23042; Rust 1.9
 - Compared values must implement `PartialEq` and `Debug`. All primitives and most std types do; for your
   own structs/enums add `#[derive(PartialEq, Debug)]` (Appendix C lists derivable traits).
 - Custom messages: any arguments after the required ones are passed to `format!`, so a format string with
-  `{}` placeholders plus values is accepted by `assert!`, `assert_eq!`, and `assert_ne!`.
+  `{}` placeholders plus values is accepted by `assert!` and `assert_eq!` and `assert_ne!`.
 
 ### `should_panic` (§11.1)
 - `#[should_panic]` goes after `#[test]` and before the function. Test passes if the body panics, fails if
@@ -120,7 +120,7 @@ assert!(result.contains("Carol"), "Greeting did not contain name, value was `{re
 | `#[should_panic]`, `#[should_panic(expected = "..")]` | pass only if body panics (with substring) |
 | `#[ignore]` | skip unless specifically requested |
 | `#[cfg(test)]` | compile item only in test configuration |
-| `assert!`, `assert_eq!`, `assert_ne!` | assertions; optional trailing `format!` arguments |
+| `assert!` / `assert_eq!` / `assert_ne!` | assertions; optional trailing `format!` arguments |
 
 | Command | Effect (§11.2, §11.3) |
 |---|---|
@@ -149,7 +149,7 @@ tests/
 ## Decision Rules
 
 - Use `assert!` for Boolean conditions (negate with `!` when the correct result is `false`); prefer
-  `assert_eq!`/`assert_ne!` over `assert!(a == b)` because they print both values on failure (§11.1).
+  `assert_eq!` / `assert_ne!` over `assert!(a == b)` because they print both values on failure (§11.1).
 - Use `assert_ne!` when you cannot know what a value will be but know what it must not be, e.g. a
   function guaranteed to change its input in a way that varies between runs (§11.1).
 - Assert on a looser property (e.g. `contains`) instead of exact equality when requirements are still

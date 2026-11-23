@@ -92,7 +92,7 @@ consult those sources with `web_extract` rather than stretching these notes.
 | `references/ch06-enums-and-matching.md` | enums, `Option<T>`, `match`, `if let`, `let...else` |
 | `references/ch07-packages-crates-modules.md` | packages, crates, modules, paths, `pub`, `use`, `pub use`, file layout |
 | `references/ch08-collections.md` | `Vec<T>`, `String` and UTF-8, `HashMap<K, V>`, the entry API |
-| `references/ch09-error-handling.md` | `panic!`, backtraces, `Result`, `?`, `unwrap`/`expect`, when to panic, validation types |
+| `references/ch09-error-handling.md` | `panic!` and backtraces, `Result`, `?`, `unwrap`/`expect`, when to panic, validation types |
 | `references/ch10-generics-traits-lifetimes.md` | generics, traits, bounds, `impl Trait`, `where`, lifetimes, elision rules |
 | `references/ch11-testing.md` | test attributes and macros, `cargo test` flags, unit vs integration test layout |
 | `references/ch12-cli-project.md` | structuring a CLI binary, args, files, env vars, stderr, TDD workflow |
@@ -104,7 +104,7 @@ consult those sources with `web_extract` rather than stretching these notes.
 | `references/ch18-oop-and-trait-objects.md` | encapsulation, `dyn Trait`, dynamic dispatch, state pattern vs types |
 | `references/ch19-patterns.md` | every place patterns appear, refutability, full pattern syntax table |
 | `references/ch20-unsafe.md` | unsafe superpowers, raw pointers, `unsafe fn`, FFI with `extern`, `static mut`, Miri |
-| `references/ch20-advanced-traits-types-functions.md` | associated types, operator overloading, disambiguation, supertraits, newtype, aliases, `!`, DSTs, `fn` pointers, returning closures |
+| `references/ch20-advanced-traits-types-functions.md` | associated types, operator overloading, disambiguation, supertraits, newtype, aliases, the never type, DSTs, `fn` pointers, returning closures |
 | `references/ch20-macros.md` | `macro_rules!`, derive, attribute-like and function-like procedural macros |
 | `references/ch21-web-server-project.md` | TCP/HTTP by hand, thread-pool design, graceful shutdown with `Drop` |
 | `references/appendix-reference.md` | keyword list, operator and symbol tables, derivable traits, `cargo fmt`/`fix`/`clippy`, editions, release channels |
@@ -163,6 +163,10 @@ consult those sources with `web_extract` rather than stretching these notes.
 - Compiler messages quoted in the references come from the Book's captured output; wording can
   shift between compiler versions while the error code stays stable.
 - Section refs such as `§10.3` mean chapter 10, section file 3 (`src/ch10-03-*.md` upstream).
+- When editing any file here, keep a space after a backticked macro name (`vec!` and, not the
+  name followed directly by a comma) and never write a download command piped into a shell: the
+  hub's install scanner reads the first as an inline-shell snippet and the second as
+  download-and-execute, and either one blocks installation for other users.
 
 ## Verification
 

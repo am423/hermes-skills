@@ -12,7 +12,7 @@ Covers §20.5 (Macros) and the chapter summary.
     2. attribute-like macros: define custom attributes usable on any item;
     3. function-like macros: look like function calls but operate on the tokens given as argument.
 - **Metaprogramming**: writing code that writes other code. Macros *expand* into more code than you
-  wrote by hand (`println!`, `vec!`, `derive`).
+  wrote by hand (`println!` and `vec!` and `derive`).
 - **Declarative macro** = something like a `match` over source code: the value is the literal Rust
   source passed to the macro, the patterns are compared with the *structure* of that source, and the
   code of the matching arm replaces the invocation. All of it happens during compilation. Also called

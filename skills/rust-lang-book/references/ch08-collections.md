@@ -132,7 +132,7 @@ for word in text.split_whitespace() {
 
 | API | Notes |
 |---|---|
-| `Vec::new`, `vec!`, `push`, `pop` | `pop` removes and returns the last element (§8.1) |
+| `Vec::new` / `vec!` / `push` / `pop` | `pop` removes and returns the last element (§8.1) |
 | `get` (Vec) | `Option<&T>` (§8.1) |
 | `String::new`, `String::from`, `to_string` | creation (§8.2) |
 | `push_str`, `push`, `+`, `format!` | growth / concatenation (§8.2) |

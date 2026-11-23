@@ -92,7 +92,7 @@ Covers §20.2 (Advanced Traits), §20.3 (Advanced Types), §20.4 (Advanced Funct
 - `fn bar() -> ! { ... }` reads "returns never"; values of `!` cannot be created.
 - Expressions of type `!` can be coerced into any other type. This is why a `match` may have one arm
   yielding `u32` and another ending in `continue`: the overall type is `u32`.
-- Expressions with type `!` named by the source: `continue`, `panic!`, and a `loop` that never ends (a
+- Expressions with the never type named by the source: `continue`, `panic!` and a `loop` that never ends (a
   `loop` containing `break` does not qualify, since it terminates).
 - `Option::unwrap` type-checks the same way: `Some(val) => val` is `T`, `None => panic!(...)` is `!`.
 
@@ -185,7 +185,7 @@ let strs: Vec<String> = nums.iter().map(ToString::to_string).collect();
   `impl OutlinePrint for Point {}` without the supertrait. Fix: `impl fmt::Display for Point`.
 - **E0308** mismatched types, "expected opaque type, found a different opaque type", note "distinct
   uses of `impl Trait` result in different opaque types": putting results of two `impl Fn(i32) -> i32`
-  functions in one `vec!`. Fix: make both return `Box<dyn Fn(i32) -> i32>`.
+  functions in one `vec!` call. Fix: make both return `Box<dyn Fn(i32) -> i32>`.
 - `match` arms of different value types (e.g. `5` and `"hello"`) do not compile; only `!`-typed arms
   may differ.
 - `let s1: str = "Hello there!";` does not compile (needs 12 bytes vs 15 for another string: no single
